@@ -37,14 +37,15 @@ CORS_ALLOWED_ORIGINS = [
 #전역 인증 및 권한 설정
 REST_FRAMEWORK = {
     # 기본인증방식을 TokenAuthentication으로 설정
-    'DEFAULT_AUTHENTICATION_CLASSES' : (
+    # Tuple 표기 대신 List표기로 설정
+    'DEFAULT_AUTHENTICATION_CLASSES' : [
         'rest_framework.authentication.TokenAuthentication'
-    ),
+    ],
     # 기본접근 방식 설정
     # IsAuthenticated 권한을 전역으로 설정하여 인증되지않은경우의 접근을 거부하고 등록된 사용자만 접근가능하게 설정
-    'DEFAULT_PERMISSION_CLASSES': (
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
-    )
+    ]
 }
 
 # Application definition
